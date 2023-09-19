@@ -4,7 +4,7 @@ const walkers = getWalkers()
 
 
 export const CityList = () => {
-    let citiesHTML = "<ol>"
+    let citiesHTML = "<ul>"
 
     for (const currentWalker of walkers) {
         citiesHTML += `<li>${currentWalker.city}</li>`

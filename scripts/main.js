@@ -5,19 +5,6 @@ import {RegisteredPets} from "./RegisteredPets.js"
 
 const mainContainer = document.querySelector("#container")
 
-document.body.addEventListener("click", (event) => {
-    const clickedElement =event.target;
-    if (clickedElement.dispatchEvent.startsWith("pet")) {
-        const idArray = clickedElement.id.split("-");
-        const [, petPrimaryKey] =idArray;
-        const petObject = getPets().find((pet) => pet.id === parseInt(petPrimaryKey, 10));
-        if(petObject) {
-            alert(`${petObject.name} barks at you`);
-        }
-        console.log(`clicked on pet with primary key: ${petPrimaryKey}`);
-    }
-});
-
 const applicationHTML = `
 <h1>DeShawns Dog Walking</h1>
 <article class="details">
@@ -40,9 +27,6 @@ const applicationHTML = `
     ${Assignments()}
 </article>
 `
-
-
-
 
 mainContainer.innerHTML = applicationHTML
 
